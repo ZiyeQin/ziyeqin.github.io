@@ -1,12 +1,12 @@
-title: AwesomeJT
-logo: /assets/images/logo.avif
+title: Ziye Qin
+logo: /assets/images/mk.jpg
 baseurl: /awesome-jekyll-theme
 
 ##
 # Typewritter configuration.
 # Feel free to disable if you don't like it.
 ##
-typewriter_effect: true
+# typewriter_effect: true
 
 ##
 # Collections configuration
@@ -24,8 +24,8 @@ collections:
 ##
 contact_channels_section: true
 contact_channels:
-  # email: "example@example.cl"
-  github: "https://github.com/a-chacon"
+  email: "ziyeq7@gmail.com"
+  github: "https://github.com/ZiyeQin"
   # telegram: "https://t.me/"
   # stackoverflow: "https://stackoverflow.com"
   # discord: "https://discord.com/"
