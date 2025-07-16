@@ -3,7 +3,7 @@
     <a href="{{include.post.url | relative_url}}" aria-label="Post Url">
         {% assign random_id = include.post.date | date: "%s" %}
         {% assign random_image = 'https://picsum.photos/600/400/?blur&random=' | append: random_id %}
-      <div class="hover:opacity-90 transition duration-300 w-full h-60 bg-cover bg-center"
+      <div class="hover:opacity-90 transition duration-300 w-60 h-60 bg-cover bg-center"
         style="background-image: url('{{ include.post.image | default: random_image }}')">
       </div>
     </a>
