@@ -1,0 +1,74 @@
+<div class="bg-white rounded-lg shadow-lg hover:shadow-xl transition-shadow duration-300 overflow-hidden">
+  <div class="md:flex">
+    {% if include.research.image %}
+    <div class="md:w-1/3">
+      <img src="{{include.research.image | relative_url}}" alt="{{include.research.title}}" class="w-full h-48 md:h-full object-cover">
+    </div>
+    {% endif %}
+    
+    <div class="p-6 {% if include.research.image %}md:w-2/3{% else %}w-full{% endif %}">
+      <div class="flex justify-between items-start mb-4">
+        <div>
+          <span class="text-sm font-medium text-blue-600 bg-blue-50 px-3 py-1 rounded-full">
+            {{ include.research.period }}
+          </span>
+        </div>
+        <div class="text-right">
+          <p class="text-sm text-gray-600">{{ include.research.institution }}</p>
+          <p class="text-xs text-gray-500">{{ include.research.location }}</p>
+        </div>
+      </div>
+      
+      <a href="{{include.research.url | relative_url}}" class="block group">
+        <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-blue-600 transition-colors">
+          {{include.research.title}}
+        </h3>
+      </a>
+      
+      {% if include.research.supervisor %}
+      <p class="text-sm text-gray-600 mb-3">
+        <span class="font-medium">Supervisor:</span> {{ include.research.supervisor }}
+      </p>
+      {% endif %}
+      
+      <div class="text-gray-700 mb-4">
+        {{include.research.excerpt}}
+      </div>
+      
+      {% if include.research.skills %}
+      <div class="flex flex-wrap gap-2 mb-4">
+        {% for skill in include.research.skills limit:5 %}
+        <span class="text-xs bg-gray-100 text-gray-700 px-2 py-1 rounded">{{ skill }}</span>
+        {% endfor %}
+        {% if include.research.skills.size > 5 %}
+        <span class="text-xs text-gray-500">+{{ include.research.skills.size | minus: 5 }} more</span>
+        {% endif %}
+      </div>
+      {% endif %}
+      
+      {% if include.research.publications %}
+      <div class="mb-4">
+        <p class="text-sm text-gray-600">
+          <span class="font-medium">Publications:</span> {{ include.research.publications.size }} paper(s)
+        </p>
+      </div>
+      {% endif %}
+      
+      <div class="flex justify-between items-center">
+        <a href="{{include.research.url | relative_url}}" 
+           class="inline-flex items-center px-4 py-2 text-sm font-medium text-blue-600 bg-blue-50 rounded-md hover:bg-blue-100 transition-colors">
+          Read More
+          <svg class="ml-2 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+          </svg>
+        </a>
+        
+        {% if include.research.status %}
+        <span class="text-xs px-2 py-1 rounded-full {% if include.research.status == 'ongoing' %}bg-green-100 text-green-800{% else %}bg-gray-100 text-gray-600{% endif %}">
+          {{ include.research.status | capitalize }}
+        </span>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>

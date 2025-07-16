@@ -4,6 +4,8 @@ home:
   see_more_posts: "See More Posts ->"
   projects_title: "Last Projects"
   see_more_projects: "See More Projects ->"
+  research_title: "Research Experience"
+  see_more_research: "See More Research ->"
 footer:
   title: "Let's keep in touch!"
   description: " Find me on any of these platforms. "
@@ -13,3 +15,6 @@ blog:
   more_articles: "More Posts"
 post:
   share: Like it? Share it!
+research:
+  read_more: "Read More ->"
+  more_research: "More Research"

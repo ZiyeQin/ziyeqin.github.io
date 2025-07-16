@@ -14,6 +14,8 @@ baseurl: /awesome-jekyll-theme
 collections:
   projects:
     output: true
+  research:
+    output: true
 
 ##
 # Contact Channels configuration

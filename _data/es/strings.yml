@@ -4,6 +4,8 @@ home:
   see_more_posts: "Ver Más Artículos ->"
   projects_title: "Últimos Proyectos"
   see_more_projects: "Ver Más Proyectos ->"
+  research_title: "Experiencia de Investigación"
+  see_more_research: "Ver Más Investigación ->"
 footer:
   title: "Mantengamosnos en contacto!"
   description: "Encuéntrame en cualquiera de estas plataformas:"
@@ -13,3 +15,6 @@ blog:
   more_articles: "Más Artículos"
 post:
   share: ¿Te gustó? ¡Compártelo!
+research:
+  read_more: "Leer Más ->"
+  more_research: "Más Investigación"

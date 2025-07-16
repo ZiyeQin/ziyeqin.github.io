@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<section class="container mx-auto pt-20 pb-10 lg:pt-[120px] lg:pb-20">
+  <div class="mb-12">
+    <h1 class="text-3xl md:text-5xl font-bold text-center mb-4">Research Experience</h1>
+    <p class="text-center text-gray-600 max-w-2xl mx-auto">
+      Here are my research experiences and academic contributions throughout my academic journey.
+    </p>
+  </div>
+
+  <div class="space-y-12">
+    {% assign sorted_research = site.research | sort: 'start_date' | reverse %}
+    {% for research in sorted_research %}
+    {% include research_card.html research=research %}
+    {% endfor %}
+  </div>
+</section>
