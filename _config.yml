@@ -42,7 +42,7 @@ contact_channels:
 plugins:
   - jekyll-archives
   - jekyll-seo-tag
-  - jekyll-polyglot
+  # - jekyll-polyglot
 
 ##
 # Polyglot configuration

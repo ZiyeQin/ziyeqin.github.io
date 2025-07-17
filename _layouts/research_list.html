@@ -3,17 +3,199 @@ layout: default
 ---
 
 <section class="container mx-auto pt-20 pb-10 lg:pt-[120px] lg:pb-20">
-  <div class="mb-12">
-    <h1 class="text-3xl md:text-5xl font-bold text-center mb-4">Research Experience</h1>
+  <div class="mb-16" style="margin-bottom: 6rem !important;">
+    <h1 class="text-3xl md:text-5xl font-bold text-center mb-8" style="margin-bottom: 2rem !important;">Research Experience</h1>
     <p class="text-center text-gray-600 max-w-2xl mx-auto">
-      Here are my research experiences and academic contributions throughout my academic journey.
+      My academic contributions including journal publications, conference presentations, and highlighted research achievements.
     </p>
   </div>
 
-  <div class="space-y-12">
-    {% assign sorted_research = site.research | sort: 'start_date' | reverse %}
-    {% for research in sorted_research %}
-    {% include research_card.html research=research %}
-    {% endfor %}
+  <!-- Spotlight Research Section -->
+  <div class="mb-16" style="margin-bottom: 6rem !important;">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center" style="margin-bottom: 3rem !important;">Research Spotlight</h2>
+    <div class="grid grid-cols-1 md:grid-cols-1 gap-8">
+      {% assign spotlight_research = site.research | where: "spotlight", true %}
+      {% for research in spotlight_research %}
+      {% include research_card.html research=research %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <!-- Publications Section -->
+  <div class="mb-16" style="margin-bottom: 6rem !important;">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8" style="margin-bottom: 3rem !important;">Journal Publications</h2>
+    <div class="bg-white rounded-lg shadow-lg p-6" style="padding: 2rem;">
+      {% if site.data.publications.journals %}
+      <div class="space-y-4" style="gap: 2rem;">
+        {% for pub in site.data.publications.journals %}
+        <div class="border-b border-gray-200 pb-4 last:border-b-0 journal-publication-item {% if forloop.index > 3 %}hidden{% endif %}" style="padding-bottom: 2rem; margin-bottom: 2rem;">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2" style="margin-bottom: 1rem !important;">{{ pub.title }}</h3>
+          <p class="text-gray-700 mb-1" style="margin-bottom: 0.75rem !important;">
+            <span class="font-medium">Authors:</span> {{ pub.authors }}
+          </p>
+          <p class="text-gray-600 mb-2" style="margin-bottom: 1rem !important;">
+            <span class="font-medium">{{ pub.journal }}</span>, {{ pub.year }}
+            {% if pub.volume %} • Vol. {{ pub.volume }}{% endif %}
+            {% if pub.pages %} • pp. {{ pub.pages }}{% endif %}
+          </p>
+          {% if pub.doi %}
+          <p class="text-sm text-gray-500 mb-2" style="margin-bottom: 1rem !important;">DOI: {{ pub.doi }}</p>
+          {% endif %}
+          <div class="flex flex-wrap gap-2" style="gap: 1rem; margin-top: 1rem;">
+            {% if pub.url %}
+            <a href="{{ pub.url }}" target="_blank" 
+               class="inline-flex items-center px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+              </svg>
+              View Paper
+            </a>
+            {% endif %}
+            {% if pub.impact_factor %}
+            <span class="px-3 py-1 text-sm bg-green-100 text-green-800 rounded-full">
+              IF: {{ pub.impact_factor }}
+            </span>
+            {% endif %}
+            {% if pub.citations %}
+            <span class="px-3 py-1 text-sm bg-gray-100 text-gray-800 rounded-full">
+              Citations: {{ pub.citations }}
+            </span>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p class="text-gray-500 text-center py-8">Journal publications will be listed here.</p>
+      {% endif %}
+    </div>
+    
+    {% if site.data.publications.journals.size > 3 %}
+    <div class="text-center mt-8" style="margin-top: 2rem;">
+      <button id="journal-see-more-btn" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 font-medium">
+        See More Publications
+      </button>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- Conference Presentations Section -->
+  <div class="mb-16" style="margin-bottom: 6rem !important;">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8" style="margin-bottom: 3rem !important;">Conference Presentations</h2>
+    <div class="bg-white rounded-lg shadow-lg p-6" style="padding: 2rem;">
+      {% if site.data.publications.conferences %}
+      <div class="space-y-4" style="gap: 2rem;">
+        {% for conf in site.data.publications.conferences %}
+        <div class="border-b border-gray-200 pb-4 last:border-b-0 conference-presentation-item {% if forloop.index > 3 %}hidden{% endif %}" style="padding-bottom: 2rem; margin-bottom: 2rem;">
+          <h3 class="text-lg font-semibold text-gray-900 mb-2" style="margin-bottom: 1rem !important;">{{ conf.title }}</h3>
+          <p class="text-gray-700 mb-1" style="margin-bottom: 0.75rem !important;">
+            <span class="font-medium">Presenters:</span> {{ conf.authors }}
+          </p>
+          <p class="text-gray-600 mb-2" style="margin-bottom: 0.75rem !important;">
+            <span class="font-medium">{{ conf.conference }}</span>, {{ conf.year }}
+          </p>
+          <p class="text-gray-600 mb-2" style="margin-bottom: 1rem !important;">
+            <span class="font-medium">Location:</span> {{ conf.location }}
+          </p>
+          <div class="flex flex-wrap gap-2" style="gap: 1rem; margin-top: 1rem;">
+            {% if conf.type %}
+            <span class="px-3 py-1 text-sm bg-purple-100 text-purple-800 rounded-full">
+              {{ conf.type }}
+            </span>
+            {% endif %}
+            {% if conf.url %}
+            <a href="{{ conf.url }}" target="_blank" 
+               class="inline-flex items-center px-3 py-1 text-sm bg-blue-100 text-blue-800 rounded-full hover:bg-blue-200">
+              <svg class="w-4 h-4 mr-1" fill="currentColor" viewBox="0 0 20 20">
+                <path d="M11 3a1 1 0 100 2h2.586l-6.293 6.293a1 1 0 101.414 1.414L15 6.414V9a1 1 0 102 0V4a1 1 0 00-1-1h-5z"></path>
+                <path d="M5 5a2 2 0 00-2 2v8a2 2 0 002 2h8a2 2 0 002-2v-3a1 1 0 10-2 0v3H5V7h3a1 1 0 000-2H5z"></path>
+              </svg>
+              View Abstract
+            </a>
+            {% endif %}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+      {% else %}
+      <p class="text-gray-500 text-center py-8">Conference presentations will be listed here.</p>
+      {% endif %}
+    </div>
+    
+    {% if site.data.publications.conferences.size > 3 %}
+    <div class="text-center mt-8" style="margin-top: 2rem;">
+      <button id="conference-see-more-btn" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors duration-300 font-medium">
+        See More Presentations
+      </button>
+    </div>
+    {% endif %}
+  </div>
+
+  <!-- Other Research Activities -->
+  <div class="mb-16" style="margin-bottom: 6rem !important;">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8" style="margin-bottom: 3rem !important;">Other Research Activities</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8" style="gap: 3rem;">
+      <!-- Patents -->
+      <div class="bg-white rounded-lg shadow-lg p-6" style="padding: 2rem;">
+        <h3 class="text-xl font-semibold mb-4 text-gray-900" style="margin-bottom: 2rem !important;">Patents</h3>
+        {% if site.data.publications.patents %}
+        <div class="space-y-3">
+          {% for patent in site.data.publications.patents %}
+          <div class="border-l-4 border-blue-500 pl-4">
+            <h4 class="font-medium text-gray-900">{{ patent.title }}</h4>
+            <p class="text-gray-600 text-sm">{{ patent.inventors }}</p>
+            <p class="text-gray-500 text-sm">{{ patent.number }} • {{ patent.year }}</p>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <p class="text-gray-500">Patent applications will be listed here.</p>
+        {% endif %}
+      </div>
+
+      <!-- Awards -->
+      <div class="bg-white rounded-lg shadow-lg p-6" style="padding: 2rem;">
+        <h3 class="text-xl font-semibold mb-4 text-gray-900" style="margin-bottom: 2rem !important;">Awards & Honors</h3>
+        {% if site.data.publications.awards %}
+        <div class="space-y-3">
+          {% for award in site.data.publications.awards %}
+          <div class="border-l-4 border-yellow-500 pl-4">
+            <h4 class="font-medium text-gray-900">{{ award.title }}</h4>
+            <p class="text-gray-600 text-sm">{{ award.organization }}</p>
+            <p class="text-gray-500 text-sm">{{ award.year }}</p>
+          </div>
+          {% endfor %}
+        </div>
+        {% else %}
+        <p class="text-gray-500">Awards and honors will be listed here.</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+
+  <!-- Research Metrics -->
+  <div class="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-lg p-8" style="padding: 3rem; margin-top: 6rem !important;">
+    <h2 class="text-2xl md:text-3xl font-bold mb-8 text-center" style="margin-bottom: 3rem !important;">Research Metrics</h2>
+    <div class="grid grid-cols-2 md:grid-cols-4 gap-6" style="gap: 2rem;">
+      <div class="text-center" style="margin-bottom: 2rem;">
+        <div class="text-3xl font-bold text-blue-600" style="margin-bottom: 1rem;">{{ site.data.publications.journals.size | default: 0 }}</div>
+        <div class="text-gray-600">Journal Papers</div>
+      </div>
+      <div class="text-center" style="margin-bottom: 2rem;">
+        <div class="text-3xl font-bold text-green-600" style="margin-bottom: 1rem;">{{ site.data.publications.conferences.size | default: 0 }}</div>
+        <div class="text-gray-600">Conference Papers</div>
+      </div>
+      <div class="text-center" style="margin-bottom: 2rem;">
+        <div class="text-3xl font-bold text-purple-600" style="margin-bottom: 1rem;">{{ site.data.publications.patents.size | default: 0 }}</div>
+        <div class="text-gray-600">Patents</div>
+      </div>
+      <div class="text-center" style="margin-bottom: 2rem;">
+        <div class="text-3xl font-bold text-orange-600" style="margin-bottom: 1rem;">{{ site.data.publications.awards.size | default: 0 }}</div>
+        <div class="text-gray-600">Awards</div>
+      </div>
+    </div>
   </div>
 </section>
+
+<script src="{{ '/assets/js/research-see-more.js' | relative_url }}"></script>

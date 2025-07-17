@@ -4,16 +4,16 @@ layout: default
 
 <link rel="stylesheet" href="{{ '/assets/css/monokai.css' | relative_url }}">
 <div class="container mx-auto">
-  <div id="research" class="prose max-w-[75ch] prose-neutral mx-auto pb-10 pt-20 lg:pt-[90px] lg:pb-20">
-    <div class="pb-4">
+  <div id="research" class="prose max-w-[75ch] prose-neutral mx-auto pb-16 pt-24 lg:pt-[120px] lg:pb-24">
+    <div class="pb-12">
       <span class="font-mulish text-sm text-gray-500">
         {{ page.period | upcase }}
       </span>
     </div>
 
-    <h1 class="text-left text-2xl font-bold md:text-5xl text-black">{{page.title}}</h1>
+    <h1 class="text-left text-2xl font-bold md:text-5xl text-black mb-12">{{page.title}}</h1>
 
-    <div class="flex flex-col md:flex-row text-sm font-mulish justify-between items-center">
+    <div class="flex flex-col md:flex-row text-sm font-mulish justify-between items-center mb-12">
       <div class="flex">
         <p>{{ page.institution }}</p>
         <p class="px-2">•</p>
@@ -25,19 +25,19 @@ layout: default
     </div>
 
     {% if page.image %}
-    <img class="w-full" src="{{page.image | relative_url}}" alt="{{page.title}}">
+    <img class="w-full mb-12" src="{{page.image | relative_url}}" alt="{{page.title}}">
     {% endif %}
 
-    <div class="my-6">
+    <div class="my-12">
       {{content}}
     </div>
 
     {% if page.publications %}
-    <div class="my-6">
-      <h2 class="text-xl font-bold mb-4">Publications</h2>
+    <div class="my-8">
+      <h2 class="text-xl font-bold mb-6">Publications</h2>
       <ul class="list-disc pl-6">
         {% for pub in page.publications %}
-        <li class="mb-2">
+        <li class="mb-4">
           {% if pub.url %}
           <a href="{{ pub.url }}" class="text-blue-600 hover:underline" target="_blank">{{ pub.title }}</a>
           {% else %}
@@ -52,8 +52,8 @@ layout: default
     {% endif %}
 
     {% if page.skills %}
-    <div class="my-6">
-      <h2 class="text-xl font-bold mb-4">Skills & Technologies</h2>
+    <div class="my-8">
+      <h2 class="text-xl font-bold mb-6">Skills & Technologies</h2>
       <div class="flex flex-wrap gap-2">
         {% for skill in page.skills %}
         <span class="px-3 py-1 bg-gray-200 text-gray-700 text-sm rounded-full">{{ skill }}</span>
@@ -62,7 +62,7 @@ layout: default
     </div>
     {% endif %}
 
-    <div class="mx-auto py-8">
+    <div class="mx-auto py-12">
       {% include sharing.html %}
     </div>
   </div>

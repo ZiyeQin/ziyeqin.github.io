@@ -1,0 +1,87 @@
+journals:
+  - title: "Deep Learning Applications in Smart Transportation: A Comprehensive Review"
+    authors: "Ziye Qin, John Smith, Jane Doe"
+    journal: "IEEE Transactions on Intelligent Transportation Systems"
+    year: 2024
+    volume: 25
+    pages: "1234-1245"
+    doi: "10.1109/TITS.2024.1234567"
+    url: "https://ieeexplore.ieee.org/document/example"
+    impact_factor: 8.5
+    citations: 12
+
+  - title: "Novel Approach to Traffic Flow Prediction Using Advanced Neural Networks"
+    authors: "Ziye Qin, Alice Johnson, Bob Wilson"
+    journal: "Transportation Research Part C"
+    year: 2023
+    volume: 158
+    pages: "104-118"
+    doi: "10.1016/j.trc.2023.104118"
+    url: "https://www.sciencedirect.com/science/article/example"
+    impact_factor: 7.2
+    citations: 25
+
+  - title: "Multi-objective Optimization for Urban Transportation Networks"
+    authors: "Ziye Qin, Maria Garcia, Tom Brown"
+    journal: "Cities"
+    year: 2022
+    volume: 128
+    pages: "103-115"
+    doi: "10.1016/j.cities.2022.103115"
+    url: "https://www.sciencedirect.com/science/article/example2"
+    impact_factor: 6.1
+    citations: 18
+
+conferences:
+  - title: "Real-time Traffic Prediction using Deep Learning: A Case Study in Smart Cities"
+    authors: "Ziye Qin, Co-author 1, Co-author 2"
+    conference: "International Conference on Intelligent Transportation Systems (ITSC)"
+    year: 2024
+    location: "Macau, China"
+    type: "Oral Presentation"
+    url: "https://example.com/conference-paper"
+
+  - title: "Optimization Algorithms for Urban Traffic Management"
+    authors: "Ziye Qin, Research Partner"
+    conference: "IEEE International Conference on Systems, Man, and Cybernetics"
+    year: 2023
+    location: "Honolulu, Hawaii, USA"
+    type: "Poster Presentation"
+    url: "https://example.com/poster"
+
+  - title: "Machine Learning for Urban Data Analysis: Methods and Applications"
+    authors: "Ziye Qin, Team Members"
+    conference: "International Conference on Smart Cities and Green ICT Systems"
+    year: 2022
+    location: "Virtual Conference"
+    type: "Oral Presentation"
+    url: "https://example.com/virtual-talk"
+
+patents:
+  - title: "System and Method for Intelligent Traffic Signal Control"
+    inventors: "Ziye Qin, Inventor 2, Inventor 3"
+    number: "CN202310123456.7"
+    year: 2023
+    status: "Pending"
+
+  - title: "Deep Learning-based Traffic Flow Prediction System"
+    inventors: "Ziye Qin, Co-inventor"
+    number: "CN202210987654.3"
+    year: 2022
+    status: "Granted"
+
+awards:
+  - title: "Outstanding Graduate Student Research Award"
+    organization: "Southwest Jiaotong University"
+    year: 2024
+    description: "Awarded for exceptional research contributions in transportation engineering"
+
+  - title: "Best Paper Award"
+    organization: "IEEE ITSC 2024"
+    year: 2024
+    description: "Recognition for outstanding research presentation at the conference"
+
+  - title: "National Scholarship"
+    organization: "Ministry of Education, China"
+    year: 2023
+    description: "Merit-based scholarship for academic excellence"
