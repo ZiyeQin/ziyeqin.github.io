@@ -1,6 +1,6 @@
 title: Ziye Qin
 logo: /assets/images/mk.jpg
-baseurl: ""  # Fixed: Empty baseurl for GitHub Pages user site
+baseurl: /awesome-jekyll-theme  # Fixed: Empty baseurl for GitHub Pages user site
 
 ##
 # Typewritter configuration.
