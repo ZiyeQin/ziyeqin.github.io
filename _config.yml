@@ -1,6 +1,6 @@
 title: Ziye Qin
 logo: /assets/images/mk.jpg
-baseurl: ""  # Fixed: Empty baseurl for GitHub Pages user site
+baseurl: /awesome-jekyll-theme  # Fixed: Empty baseurl for GitHub Pages user site
 
 ##
 # Typewritter configuration.
@@ -42,6 +42,18 @@ contact_channels:
 plugins:
   - jekyll-archives
   - jekyll-seo-tag
+<<<<<<< HEAD
+=======
+  - jekyll-polyglot
+
+##
+# Polyglot configuration
+##
+languages: ["en"]
+default_lang: "en"
+exclude_from_localization: ["javascript", "images", "css", "public"]
+parallel_localization: true
+>>>>>>> ddd7d90f7abe2286c3fd3650d7ef5d4356df74ea
 
 ##
 # Archives configuration
