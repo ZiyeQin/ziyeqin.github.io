@@ -2,6 +2,17 @@ title: Ziye Qin
 logo: /assets/images/mk.jpg
 baseurl: ""  # Empty baseurl for GitHub Pages user site
 
+# Explicitly disable any default theme
+theme: null
+remote_theme: null
+
+# Ensure local directories are used
+layouts_dir: _layouts
+includes_dir: _includes
+sass:
+  sass_dir: _sass
+  style: compressed
+
 ##
 # Typewritter configuration.
 # Feel free to disable if you don't like it.
